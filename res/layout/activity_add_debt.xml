@@ -1,0 +1,244 @@
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scrollView1"
+	android:background="#FFFFFF"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingTop="5dp"
+    tools:context=".AddDebt" >
+	    <LinearLayout
+	        android:padding="5sp"
+	        android:layout_marginLeft="2sp"
+	        android:layout_marginRight="2sp"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:orientation="vertical" >
+
+		     <TextView
+		         android:id="@+id/textView2"
+		         android:layout_width="fill_parent"
+		         android:layout_height="wrap_content"
+		         android:layout_marginLeft="5sp"
+		         android:layout_marginTop="5dp"
+		         android:text="DEBT INFOS"
+		         android:textAppearance="?android:attr/textAppearanceSmall"
+		         android:textColor="#163F5F"
+		         android:textStyle="bold" />
+
+				<LinearLayout
+					    android:orientation = "horizontal" 
+					    android:layout_width = "fill_parent" 
+					    android:layout_height = "wrap_content" 
+					   	android:layout_gravity = "center_horizontal" 
+					    android:layout_weight = "1" >
+				    </LinearLayout>
+			    <RelativeLayout
+			        android:layout_width="match_parent"
+			        android:layout_height="wrap_content" >
+				<EditText
+				    android:id="@+id/txtDebtAmount"
+				    android:focusable="true"
+				    android:layout_width="fill_parent"
+				    android:layout_height="wrap_content"
+				    android:layout_alignParentRight="true"
+				    android:ems="10"
+			        android:textSize="20dip" 
+		            android:textColor="#163F5F"
+				    android:hint="Type the amount"
+				    android:inputType="numberDecimal|numberSigned"
+				    android:maxLength="10"
+				    android:textColorHint="#858585">
+				     <requestFocus />
+				     </EditText>
+				   
+
+				<TextView
+				    android:id="@+id/lblCurrency"
+				    android:layout_width="10dp"
+				    android:text="$"
+				    android:visibility="gone"
+			        android:textSize="20dip" 
+				    android:textStyle="bold"
+				    android:layout_height="wrap_content"
+				    android:layout_alignBottom="@+id/txtDebtAmount"
+				    android:layout_alignParentLeft="true"
+				    android:layout_toLeftOf="@+id/txtDebtAmount"
+				    android:drawSelectorOnTop="true"
+				    android:paddingLeft="5dp" />
+
+			    </RelativeLayout>
+			    <EditText
+			        android:id="@+id/txtDescription"
+			    	android:textColorHint="#858585"
+		        	android:hint="Description"
+			        android:drawablePadding="5dp"
+	            	android:maxLength="30"
+			        android:textSize="18dp"
+		            android:textColor="#163F5F"
+			        android:layout_width="match_parent"
+			        android:layout_height="wrap_content"
+			        android:layout_centerHorizontal="true"
+			        android:ems="10"
+				    android:inputType="textPersonName" />
+	 		<TextView
+	            android:id="@+id/lblName"
+	            android:layout_width="fill_parent"
+	            android:layout_height="wrap_content"
+		        android:layout_marginTop="15sp"
+	            android:text="NAME OF DEBTEE"
+		         android:layout_marginLeft="5sp"
+	            android:textAppearance="?android:attr/textAppearanceSmall"
+	            android:textColor="#163F5F"
+	            android:textStyle="bold" />
+	        	<RelativeLayout
+			        android:layout_width="match_parent"
+			        android:layout_height="wrap_content" >
+
+					<AutoCompleteTextView
+					    android:id="@+id/txtPerson"
+					    android:layout_width="wrap_content"
+					    android:layout_height="wrap_content"
+					    android:layout_alignParentLeft="true"
+					    android:layout_alignParentTop="true"
+					    android:layout_toLeftOf="@+id/imgBrowseContacts"
+					    android:drawablePadding="5dp"
+					    android:ems="10"
+			            android:textSize="18dp"
+					    android:hint="E.g.  &quot;Juan Dela Cruz&quot;"
+					    android:inputType="textPersonName"
+					    android:maxLength="30"
+					    android:textColor="#163F5F"
+					    android:textColorHint="#858585" />
+					<ImageView
+					    android:id="@+id/imgBrowseContacts"
+					    android:layout_width="30dp"
+					    android:layout_height="wrap_content"
+					    android:layout_alignBottom="@+id/txtPerson"
+					    android:layout_alignParentRight="true"
+					    android:onClick="clickimgBrowseContacts"
+					    android:drawSelectorOnTop="true"
+					    android:src="@drawable/ic_action_person" />
+			    </RelativeLayout>
+	        	<RelativeLayout
+					android:id="@+id/layoutAddMore"
+					android:onClick="clickLayoutAddMore"
+			        android:layout_width="match_parent"
+			        android:layout_height="wrap_content" >
+			 		<TextView
+			            android:id="@+id/imgViewMore"
+			            android:layout_width="fill_parent"
+			            android:layout_height="wrap_content"
+			            android:layout_marginLeft="5sp"
+				        android:paddingTop="10sp"
+			            android:text="Add More Info"
+			            android:textAppearance="?android:attr/textAppearanceMedium"
+			            android:textColor="#8C8C8C" />
+			    </RelativeLayout>
+			    
+	        	<LinearLayout
+					android:id="@+id/layoutViewMore"
+		            android:layout_width="match_parent"
+		            android:visibility="gone"
+		            android:orientation="vertical"
+		            android:layout_height="wrap_content" >
+					    <EditText
+					        android:id="@+id/txtMobileNo"
+					    	android:textColorHint="#858585"
+			            	android:maxLength="25"
+				        	android:hint="Mobile Number"
+		         			android:textColor="#163F5F"
+					        android:layout_width="match_parent"
+					        android:layout_height="wrap_content"
+					        android:layout_centerHorizontal="true"
+					        android:ems="10"
+				        	android:inputType="phone" />
+			    </LinearLayout>
+			    <LinearLayout
+					android:id="@+id/layoutViewMoreEmail"
+		            android:layout_width="match_parent"
+		            android:visibility="gone"
+		            android:orientation="vertical"
+		            android:layout_height="wrap_content" >
+					    <EditText
+					        android:id="@+id/txtEmail"
+					    	android:textColorHint="#858585"
+			            	android:maxLength="40"
+				        	android:hint="Email Address"
+		         			android:textColor="#163F5F"
+					        android:layout_width="match_parent"
+					        android:layout_height="wrap_content"
+					        android:layout_centerHorizontal="true"
+					        android:ems="10"
+				        	android:inputType="textEmailAddress" />
+			    </LinearLayout>
+		        <TextView
+		         android:id="@+id/textView2"
+		         android:layout_width="fill_parent"
+		         android:layout_height="wrap_content"
+		         android:layout_marginTop="10sp"
+		         android:layout_marginLeft="5sp"
+		         android:text="DUE DATE (OPTIONAL)"
+		         android:textAppearance="?android:attr/textAppearanceSmall"
+		         android:textColor="#163F5F"
+		         android:textStyle="bold" />
+
+			     <LinearLayout
+			         android:id="@+id/linearLayout1"
+			         android:layout_width="fill_parent"
+			         android:layout_height="wrap_content" >
+			
+			        <Button
+			            android:id="@+id/btnDate"
+			            style="?android:attr/spinnerStyle"
+			            android:layout_width="0dip"
+		            	android:textColor="#163F5F"
+			            android:layout_height="wrap_content"
+			            android:layout_weight="1.5"
+			            android:onClick="clickDate"
+			            android:textSize="18dp" />
+			
+			        <Button
+			            android:id="@+id/btnTime"
+			            android:onClick="clickTime"
+		            	android:textColor="#163F5F"
+			            style="?android:attr/spinnerStyle"
+			            android:layout_width="0dip"
+			            android:textSize="18dp"
+			            android:layout_height="wrap_content"
+			            android:layout_weight="1" />
+			    </LinearLayout>
+			    <Button
+			        android:id="@+id/btnSave"
+			        android:layout_marginTop="5sp"
+			        android:textColor="#FFFFFF"
+			        android:layout_gravity="center"
+			        android:paddingTop="5sp"
+			        android:layout_marginLeft="10dp"
+			        android:layout_marginRight="10dp"
+			        android:paddingBottom="5sp"
+			        android:onClick="clickSave"
+        			android:background="@drawable/blue"
+			        android:layout_width="fill_parent"
+			        android:layout_height="wrap_content"
+			        android:text="Save" />
+			    <DatePicker
+			        android:id="@+id/datePicker"
+			        android:visibility="gone"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content" />
+			    <TimePicker
+			        android:id="@+id/timePicker"
+			        android:visibility="gone"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content" />
+	    </LinearLayout>
+</LinearLayout>
+</ScrollView>

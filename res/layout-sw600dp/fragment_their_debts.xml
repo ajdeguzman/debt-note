@@ -1,0 +1,68 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:background="#E5E5E5"
+    android:layout_height="fill_parent">
+      <LinearLayout
+ 	    android:layout_width="fill_parent"
+ 	    android:visibility="gone"
+ 	    android:gravity="left"
+ 	    android:background="#3A4B6E"
+ 	    android:layout_height="wrap_content"
+ 	    android:layout_alignParentLeft="true"
+	 	android:id="@+id/layoutAbove">
+	 	<RelativeLayout
+	 	    android:layout_width="wrap_content"
+	 	    android:layout_height="wrap_content" >
+	 	    <TextView
+		 	    android:id="@+id/txtTotal"
+	 	    	android:gravity="left"
+		 	    android:layout_gravity="left"
+		 	    android:layout_width="wrap_content"
+		 	    android:layout_height="wrap_content"
+		 	    android:textColor="#8796B3"
+		 	    android:textStyle="bold"
+		 	    android:padding="5dp"
+		 	    android:layout_alignParentLeft="true"
+		 	    android:layout_marginLeft="5dp"
+		 	    android:layout_margin="5dp"
+		 	    android:text="Total: P 10, 578"
+				android:textSize="13dp"/>
+		 	<TextView
+		 	    android:id="@+id/txtCount"
+	 	    	android:gravity="right"
+	 	    	android:background="@drawable/circle"
+		 	    android:layout_width="wrap_content"
+		 	    android:layout_height="wrap_content"
+		 	    android:textColor="#E9E9E9"
+		 	    android:textStyle="bold"
+		 	    android:layout_alignParentRight="true"
+		 	    android:padding="5dp"
+		 	    android:layout_marginBottom="5dp"
+		 	    android:layout_marginRight="15dp"
+		 	    android:layout_margin="5dp"
+		 	    android:text="10"
+				android:textSize="11dp"/>
+	 	</RelativeLayout>
+ 	</LinearLayout>
+        <ListView 
+        android:id = "@+id/listview_my_debts" 
+        android:layout_below="@+id/layoutAbove"
+        android:padding="5dp"
+        android:listSelector="@drawable/list_item_selector"
+        android:cacheColorHint="#00000000"
+        android:scrollbarThumbVertical="@color/green"
+        android:divider="@null"
+        android:layout_width = "fill_parent" 
+        android:layout_height = "fill_parent"
+        />
+ 	<TextView
+ 	    android:id="@+id/txtEmpty"
+ 	    android:layout_width="fill_parent"
+ 	    android:layout_height="fill_parent"
+ 	    android:layout_alignParentTop="true"
+ 	    android:gravity="center"
+        android:textColor="#000000"
+ 	    android:text="List is Empty."
+ 	    android:textAppearance="?android:attr/textAppearanceMedium" />
+</RelativeLayout>

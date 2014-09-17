@@ -1,0 +1,108 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    tools:context=".SinglePayment" >
+
+    <TableRow
+        android:id="@+id/tableRow2"
+        android:paddingTop="5dp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+        <TextView
+            android:id="@+id/textView2"
+            android:gravity="right"
+        	android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="CURRENT DEBT AMOUNT"
+            style="?android:listSeparatorTextViewStyle"
+            android:textStyle="bold"
+            android:textColor = "#163F5F"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+    </TableRow>
+    <TableRow
+        android:id="@+id/tableRow1"
+        android:layout_gravity="right"
+        android:layout_width="wrap_content"
+	    android:layout_height="wrap_content" >
+
+	    <TextView
+	        android:id="@+id/lblCurrentAmount"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentLeft="true"
+	        android:layout_alignParentTop="true"
+	        android:text="$ 100.00"
+	        android:textAppearance="?android:attr/textAppearanceLarge"
+	        android:textSize="30dip" />
+
+    </TableRow>
+    <TableRow
+        android:id="@+id/tableRow1"
+        android:layout_width="fill_parent"
+	    android:layout_height="wrap_content" >
+
+		<EditText
+		    android:id="@+id/txtPaymentAmount"
+		    android:maxLength="10"
+		    android:layout_width="fill_parent"
+		    android:layout_height="wrap_content"
+		    android:layout_alignParentTop="true"
+		    android:layout_below="@+id/textView1"
+		    android:layout_centerHorizontal="true"
+		    android:ems="10"
+		    android:digits="0123456789"
+		    android:hint="Payment Amount"
+		    android:inputType="numberDecimal"
+		    android:textSize="18dp" >
+
+    </EditText>
+	</TableRow>
+    <TextView
+     android:id="@+id/textView2"
+     android:layout_width="fill_parent"
+     android:layout_height="wrap_content"
+  	 android:layout_marginLeft="5sp"
+  	 android:paddingTop="5dp"
+     android:text="DATE OF PAYMENT"
+     android:textAppearance="?android:attr/textAppearanceSmall"
+     android:textColor="#163F5F"
+     android:textStyle="bold" />
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+        <Button
+            android:id="@+id/btnDate"
+            style="?android:attr/spinnerStyle"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.5"
+            android:onClick="clickDate"
+            android:textSize="18dp" />
+
+        <Button
+            android:id="@+id/btnTime"
+            android:onClick="clickTime"
+            style="?android:attr/spinnerStyle"
+            android:layout_width="0dip"
+            android:textSize="18dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+    </LinearLayout>
+    <DatePicker
+        android:id="@+id/datePicker"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TimePicker
+        android:id="@+id/timePicker"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>
