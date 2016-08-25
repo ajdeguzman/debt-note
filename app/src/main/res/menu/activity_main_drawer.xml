@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_dashboard"
+            android:icon="@mipmap/ic_menu_dashboard"
+            android:title="Dashboard" />
+        <item
+            android:id="@+id/nav_i_owe"
+            android:icon="@mipmap/ic_menu_owed"
+            android:title="I Owe" />
+        <item
+            android:id="@+id/nav_owes"
+            android:icon="@mipmap/ic_menu_owed"
+            android:title="Owed to Me" />
+        <item
+            android:id="@+id/nav_archive"
+            android:icon="@mipmap/ic_menu_archive"
+            android:title="Archive" />
+        <item
+            android:id="@+id/nav_people"
+            android:icon="@mipmap/ic_menu_people"
+            android:title="People" />
+    </group>
+
+    <group android:checkableBehavior="single">
+            <item
+                android:id="@+id/nav_settings"
+                android:icon="@drawable/ic_menu_manage"
+                android:title="Settings" />
+            <item
+                android:id="@+id/nav_about"
+                android:icon="@mipmap/ic_menu_about"
+                android:title="About" />
+    </group>
+
+</menu>
