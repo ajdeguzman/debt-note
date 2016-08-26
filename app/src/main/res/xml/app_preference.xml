@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+	<PreferenceCategory android:title="CURRENCY SETTINGS">
+	<ListPreference 
+	    android:dialogTitle="Select Currency" 
+	    android:negativeButtonText="Cancel" 
+	    android:title="Default Currency"
+	    android:defaultValue="53" 
+	    android:summary="Set the default currency" 
+	    android:key="lstDefaultCurrency" />	
+	</PreferenceCategory>
+	<PreferenceCategory android:title="NOTIFICATION SETTINGS">
+	    <CheckBoxPreference android:key="chkNotification" 
+	        android:title="Notifications"
+			android:enabled="true"
+			android:selectable="true"
+			android:defaultValue="true"
+			android:summary="Display debt reminders in notification drawer"/>
+	     <RingtonePreference 
+		    android:key="ringtonePreference"
+		    android:title="Select Ringtone"
+		    android:ringtoneType="notification"
+		    android:summary="Set Ringtone for notifications"
+		    android:dependency="chkNotification"/>
+	</PreferenceCategory>
+	<PreferenceCategory android:title="BACK UP AND RESTORE">
+		<Preference android:key="backupPreference" android:title="Back Up" android:summary="Back Up Debts including Archives"/>
+		<Preference android:key="restorePreference" android:title="Restore" android:summary="Import debt file from storage"/>
+	</PreferenceCategory><PreferenceCategory android:title="FEEDBACK">
+	    <Preference
+		        android:key="contactDevKey"
+		        android:title="Contact Developer"
+		        android:summary="Found bugs? Notify developer">
+		</Preference>
+	</PreferenceCategory>
+	
+</PreferenceScreen>

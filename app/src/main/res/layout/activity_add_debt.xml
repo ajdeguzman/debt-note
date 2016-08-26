@@ -4,8 +4,8 @@
     android:id="@+id/layoutRoot"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF"
-    android:focusableInTouchMode="true">
+    android:background="#FFFFFF">
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -17,228 +17,229 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content" />
 
-        <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_margin="20dp">
+        <ScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-            <TextView
-                android:id="@+id/textView2"
+            <LinearLayout
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="5sp"
-                android:layout_marginStart="5sp"
-                android:layout_marginTop="5dp"
-                android:text="DEBT DETAILS"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:textColor="@color/textColor"
-                android:textStyle="bold" />
-
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <EditText
-                    android:id="@+id/txtDebtAmount"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:focusable="true"
-                    android:hint="Type the amount"
-                    android:inputType="numberDecimal|numberSigned"
-                    android:maxLength="10"
-                    android:textColor="#163F5F"
-                    android:textColorHint="#858585"
-                    android:textSize="20sp">
-
-                    <requestFocus />
-                </EditText>
-
+                android:layout_margin="20dp"
+                android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/lblCurrency"
-                    android:layout_width="10dp"
-                    android:layout_height="wrap_content"
-                    android:drawSelectorOnTop="true"
-                    android:paddingLeft="5dp"
-                    android:text="$"
-                    android:textSize="20sp"
-                    android:textStyle="bold"
-                    android:visibility="gone" />
-
-            </RelativeLayout>
-
-            <EditText
-                android:id="@+id/txtDescription"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:drawablePadding="5dp"
-                android:ems="10"
-                android:hint="Description"
-                android:inputType="textPersonName"
-                android:maxLength="30"
-                android:textColor="#163F5F"
-                android:textColorHint="#858585"
-                android:textSize="18dp" />
-
-            <TextView
-                android:id="@+id/lblName"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:layout_marginStart="5dp"
-                android:layout_marginTop="15sp"
-                android:text="NAME OF DEBTEE"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:textColor="@color/textColor"
-                android:textStyle="bold" />
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <AutoCompleteTextView
-                    android:id="@+id/txtPerson"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:drawablePadding="5dp"
-                    android:ems="10"
-                    android:inputType="textPersonName"
-                    android:maxLength="30"
-                    android:textColor="#163F5F"
-                    android:textColorHint="#858585"
-                    android:textSize="18dp" />
-
-                <ImageView
-                    android:id="@+id/imgBrowseContacts"
-                    android:layout_width="30dp"
-                    android:layout_height="wrap_content"
-                    android:layout_alignBottom="@+id/txtPerson"
-                    android:drawSelectorOnTop="true"
-                    android:onClick="clickimgBrowseContacts"
-                    android:src="@mipmap/ic_launcher" />
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:id="@+id/layoutAddMore"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:onClick="clickLayoutAddMore">
-
-                <TextView
-                    android:id="@+id/imgViewMore"
+                    android:id="@+id/textView2"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5sp"
                     android:layout_marginStart="5sp"
-                    android:paddingTop="10sp"
-                    android:text="Add More Info"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:textColor="#8C8C8C" />
-            </RelativeLayout>
+                    android:layout_marginTop="5dp"
+                    android:text="DEBT DETAILS"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textColor="@color/textColor"
+                    android:textStyle="bold" />
 
-            <LinearLayout
-                android:id="@+id/layoutViewMore"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:visibility="gone">
 
-                <EditText
-                    android:id="@+id/txtMobileNo"
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <EditText
+                            android:id="@+id/txtDebtAmount"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:ems="10"
+                            android:focusable="true"
+                            android:hint="Amount"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:inputType="numberDecimal|numberSigned"
+                            android:maxLength="10"/>
+                    </android.support.design.widget.TextInputLayout>
+
+
+                    <TextView
+                        android:id="@+id/lblCurrency"
+                        android:layout_width="10dp"
+                        android:layout_height="wrap_content"
+                        android:drawSelectorOnTop="true"
+                        android:paddingLeft="5dp"
+                        android:text="$"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:visibility="gone" />
+
+                </RelativeLayout>
+
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/txtDescription"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawablePadding="5dp"
+                        android:ems="10"
+                        android:hint="Description"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:inputType="textPersonName"
+                        android:maxLength="30" />
+                </android.support.design.widget.TextInputLayout>
+
+                <TextView
+                    android:id="@+id/lblName"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="15sp"
+                    android:text="NAME OF DEBTEE"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textColor="@color/textColor"
+                    android:textStyle="bold" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/txtPerson"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawablePadding="5dp"
+                        android:ems="10"
+                        android:inputType="textPersonName"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:maxLength="30"/>
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/layoutViewMore"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:hint="Mobile Number"
-                    android:inputType="phone"
-                    android:maxLength="25"
-                    android:textColor="#163F5F"
-                    android:textColorHint="#858585" />
-            </LinearLayout>
+                    android:orientation="vertical"
+                    android:visibility="gone">
 
-            <LinearLayout
-                android:id="@+id/layoutViewMoreEmail"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                
-                android:orientation="vertical"
-                android:visibility="gone">
+                    <EditText
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:id="@+id/txtMobileNo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:hint="Mobile Number"
+                        android:inputType="phone"
+                        android:maxLength="25"
+                        android:textColor="#163F5F"
+                        android:textColorHint="#858585" />
+                </LinearLayout>
 
-                <EditText
-                    android:id="@+id/txtEmail"
+                <LinearLayout
+                    android:id="@+id/layoutViewMoreEmail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:hint="Email Address"
-                    android:inputType="textEmailAddress"
-                    android:maxLength="40"
-                    android:textColor="#163F5F"
-                    android:textColorHint="#858585" />
+
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <EditText
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:id="@+id/txtEmail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:hint="Email Address"
+                        android:inputType="textEmailAddress"
+                        android:maxLength="40"
+                        android:textColor="#163F5F"
+                        android:textColorHint="#858585" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5sp"
+                    android:layout_marginStart="5sp"
+                    android:layout_marginTop="10sp"
+                    android:text="DUE DATE (OPTIONAL)"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textColor="@color/textColor"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:id="@+id/linearLayout1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content">
+
+                    <Button
+                        android:id="@+id/btnDate"
+                        style="@style/Widget.AppCompat.Spinner"
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textColor="#163F5F"
+                        android:textSize="18dp" />
+
+                    <Button
+                        android:id="@+id/btnTime"
+                        style="@style/Widget.AppCompat.Spinner"
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textColor="#163F5F"
+                        android:textSize="18dp" />
+                </LinearLayout>
+
+                <DatePicker
+                    android:id="@+id/datePicker"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone" />
+
+                <!--<TimePicker
+                    android:id="@+id/timePicker"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone" />-->
             </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true">
+
+        <LinearLayout
+            android:id="@+id/linearBtnSaveDebt"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/material_yellow"
+            android:gravity="center_vertical"
+            android:onClick="clickBtnSaveDebt"
+            android:orientation="vertical">
 
             <TextView
-                android:id="@+id/textView3"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="5sp"
-                android:layout_marginStart="5sp"
-                android:layout_marginTop="10sp"
-                android:text="DUE DATE (OPTIONAL)"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:textColor="@color/textColor"
-                android:textStyle="bold" />
-
-            <LinearLayout
-                android:id="@+id/linearLayout1"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content">
-
-                <Button
-                    android:id="@+id/btnDate"
-                    style="?android:attr/spinnerStyle"
-                    android:layout_width="0dip"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1.5"
-                    android:onClick="clickDate"
-                    android:textColor="#163F5F"
-                    android:textSize="18dp" />
-
-                <Button
-                    android:id="@+id/btnTime"
-                    style="?android:attr/spinnerStyle"
-                    android:layout_width="0dip"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:onClick="clickTime"
-                    android:textColor="#163F5F"
-                    android:textSize="18dp" />
-            </LinearLayout>
-
-            <Button
-                android:id="@+id/btnSave"
+                android:id="@+id/lblJobShowResults"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="right"
-                android:layout_margin="5dp"
-                android:padding="5dp"
-                style="@style/Widget.AppCompat.Button.Borderless"
-                android:onClick="clickSave"
+                android:layout_gravity="center"
+                android:gravity="center_vertical|center_horizontal"
+                android:paddingTop="5dp"
                 android:text="Save"
-                android:textColor="@color/colorPrimary" />
-
-            <DatePicker
-                android:id="@+id/datePicker"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:visibility="gone" />
-
-            <!--<TimePicker
-                android:id="@+id/timePicker"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:visibility="gone" />-->
+                android:textAllCaps="true"
+                android:textAppearance="@android:style/TextAppearance.Medium"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
         </LinearLayout>
-    </LinearLayout>
+
+    </RelativeLayout>
 </android.support.design.widget.CoordinatorLayout>
