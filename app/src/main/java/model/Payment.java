@@ -4,12 +4,12 @@
  * adeguzman@weboutsourcing-gateway.com
  */
 
-package com.ajdeguzman.debtnote.model;
+package model;
 
 import io.realm.RealmObject;
 
-public class Contact extends RealmObject {
-    public Contact(){
+public class Payment extends RealmObject {
+    public Payment(){
         
     }
 
